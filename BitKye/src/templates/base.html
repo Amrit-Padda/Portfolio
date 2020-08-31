@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        
+        body { 
+            padding-top: 70px; 
+        }
+        .masthead {
+            height: 75vh;
+            min-height: 500px;
+            background-image: url("{{url_for('static', filename='architecture.jpg')}}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        img.logo{
+            max-width:15%;
+        }
+        img.future{
+            max-width:75%;
+        }
+    </style>
+
+    <!--
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='site.webmanifest')}}">
+    -->
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Cover example CSS-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/cover/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>BitKye</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand"><img class = "logo" src="{{url_for('static', filename='BitKyeblack.png')}}"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('.index') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('.queues') }}">Kye's</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('.about') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/bit.kye.7"> <i class=" fa fa-facebook" aria-hidden="true"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/bit.kye/"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <footer>
+        <div class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2020 BitKye  &middot; <a href="{{ url_for('.about') }}">Terms</a>  &middot; <a href="mailto:support@bitkye.com">Support</a> </p>
+        </div>
+    </footer>
+
+</body>
+</html>

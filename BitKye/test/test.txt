@@ -1,0 +1,3 @@
+curl -H "Content-Type: Application/json" --data-binary  @C:\Users\Amrit\Documents\GitHub\BitKye\test\test.json http://127.0.0.1:5000/callback -v
+curl -H "Content-Type: Application/json" --data-binary  @C:\Users\Amrit\Documents\GitHub\BitKye\test\test.json http://bitkye.com/callback -v
+curl -H "Content-Type: Application/json" --data-binary  @C:\Users\Amrit\Documents\GitHub\BitKye\test\test2.json http://bitkye.com/callback -v

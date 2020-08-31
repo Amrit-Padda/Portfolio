@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead">
+        <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+            <h1 class="display-3 text-light">Welcome to the </h1>
+            <img class = "future" src="{{url_for('static', filename='future.png')}}"/>
+            </div>
+        </div>
+        </div>
+
+        <style>
+            body {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+                color: #5a5a5a;
+            }
+            .img-fluid {
+            max-width: 50%;
+            height: auto;
+            }
+            .featurette-divider {
+            margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+            }
+
+            /* Thin out the marketing headings */
+            .featurette-heading {
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -.05rem;
+            }
+            .featurette{
+                display: flex;
+                align-items: center;
+            }
+            #hideme { display: none; }
+        </style>
+        
+    </header>
+    <!-- Page Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Get money. <span class="text-muted">For free.</span></h2>
+                    <p class="lead">With BitKye you can get money to pay bills, take a vacation or start a new career. No matter the reason, BitKye can help you achieve your goals. </p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <img class="featurette-image img-fluid mx-auto" src="{{url_for('static', filename='Money.png')}}" alt="Generic placeholder image">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">It's that simple. <span class="text-muted">See for yourself.</span></h2>
+                    <p class="lead">Visit the <a href="{{ url_for('.about') }}">about</a> page for more information on how BitKye works. Once you're satisfied, contribute to your first Kye to get in on the action!</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="featurette-image img-fluid mx-auto"  src="{{url_for('static', filename='Analytics.png')}}" alt="Generic placeholder image">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">And lastly. <span class="text-muted">Tell your friends.</span></h2>
+                    <p class="lead">BitKye was designed to help people achieve their goals, it operates on contributions from people like you. Spread the word so that others can also benefit.</p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <img class="featurette-image img-fluid mx-auto " src="{{url_for('static', filename='people.png')}}" alt="Generic placeholder image">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <div class = "row">
+                    <div class="col-12 text-center">
+                        <h2 class="font-weight-light">Want to be notified when BitKye launches?  </h2>
+                    </div>
+                    <div class="col">
+                        <form class="form-inline justify-content-center" id = "emailinput">
+                            <div class="form-group ">
+                                <input type="email" class="form-control lead" id="inputEmail3" placeholder="Email">
+                                <button type="submit" class="btn btn-success" onclick="myFunction()" data-dismiss="alert"><span aria-hidden="true">Submit</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row featurette" id ="hideme">
+                <div class="col-md-12 text-center">
+                    <p class="lead"> Thanks for your interest, we will contact you when BitKye launches! </p>
+            </div>
+            
+        </container>
+    </section>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" crossorigin="anonymous">
+        //$(document).ready(function() {
+            var socket = io.connect();
+        //});
+
+        function myFunction() {
+            var inputVal = document.getElementById("inputEmail3").value;
+            var jsonout = {"data": inputVal}
+            socket.emit('new email', jsonout);
+            var x = document.getElementById("hideme");
+            x.style.display = "block";
+        }
+
+        </script>
+
+    {% endblock %} 

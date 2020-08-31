@@ -1,0 +1,2 @@
+from blockcypher import subscribe_to_address_webhook
+subscribe_to_address_webhook(callback_url='https://test-bitkye.ngrok.io/callback', subscription_address='tb1q0d72sjqutecj8wyuj5lg3ge3w5fwrvc2rkrvjw', event='confirmed-tx', api_key='b09ab54de88b480e9ee023d935527ba7')

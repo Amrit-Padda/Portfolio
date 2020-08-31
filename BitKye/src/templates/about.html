@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<!-- Page Content -->
+    <div class="container py-5">
+        <div id="accordion">
+            <h2 class="font-weight-light"> General FAQ</h2>
+            <div class="panel">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is BitKye?
+                    </button>
+                    </h5>
+                </div>
+            
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        BitKye is based on the concept of a Rotating Credit and Savings Association (ROSCA).
+                        A ROSCA operates on a trust model, where members of a community will come together and contribute to a group fund.
+                        After a given amount of time, a member of the ROSCA will withdraw the money from the fund, this will continue as long as the group exists.
+                    </br>
+                    </br>
+                        Traditionally, ROSCA's have been popular in developing economies and among immigrant communities, where access to formal financial institutions is limited.
+                        A ROSCA allows people to have access to capital without many of the barriers to entry.
+                    </br>
+                    </br>
+                        The rules which govern who can collect the fund depend on the structure of the ROSCA. In some systems, the collector is decided based on 'turns'
+                        where each member is guaranteed a collection. In others, the collector is the person who bids the highest amount. This is the model BitKye operates on. 
+                    </br>
+                    </br>
+                        If you would still like more information, the following <a href="https://www.investopedia.com/terms/r/rotating-credit-and-savings-association.asp">Investopedia</a>  and <a href="https://en.wikipedia.org/wiki/Rotating_savings_and_credit_association">Wikipedia</a> pages are very informative. 
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How does it work?
+                </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    We leverage the Bitcoin Blockchain to process payments and distribute pool funds. 
+                    Simply transfer the pool buy in amount to the BitKye address and that's it! 
+                    You're automatically added to the next queue.
+                </br>
+                </br>
+                    BitKye will distribute the funds of a Kye to the highest bidder. The excess amount (any amount greater than the buy-in amount) is distributed to the Kye contributers
+                    as interest. 
+                </div>
+            </div>
+            </div>
+            <div class="panel">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Whats the catch?
+                </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    When you decide to join a pool, you will have to enter an amount greater than the pool buy in amount in order to take home the Kye. 
+                    Any amount over the pool buy in amount is distributed to the other pool members as interest. 
+                </div>
+            </div>
+            </div>
+            <div class="panel">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsea" aria-expanded="false" aria-controls="collapsea">
+                        Why should I contribute?
+                    </button>
+                    </h5>
+                </div>
+                <div id="collapsea" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        When you contribute to a Kye, and are not the highest bidder, you will recieve interest. Any amount <strong>greater than</strong> the buy-in amount is considered interest, and is distributed evenly to all Kye contributers.
+                        For example, if the buy-in amount is 0.011 BTC, and the winner bids 0.031 BTC, the 9 other members will split the 0.02 BTC interest evenly, representing a return of 18%. 
+                    </div>
+                </div>
+                </div>
+            <div class="panel">
+                <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Whats in it for me?
+                    </button>
+                </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                    Great question! If you're having trouble making ends meet, you can bid on a pool and take home the amount. 
+                    It's that easy! BitKye operates on an honor model, we expect that once you've achieved your goals, you will return and help others achieve their goals too!
+                </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    What is a Kye?
+                    </button>
+                </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                    A Kye is the Korean word for a rotating savings and credit association. They are common in immigrant communities as a form of peer to peer lending or banking. 
+                </div>
+                </div>
+            </div>
+            <br>
+            <h2 class="font-weight-light">Terms and conditions</h2>
+            <div class="panel">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                        Fees 
+                    </button>
+                    </h5>
+                </div>
+            
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                    <div class="card-body">
+                        All BitKye transactions are subject to a {{fee}}% transaction fee. This includes deposits and Kye distributions. 
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                        Refund Policy
+                    </button>
+                    </h5>
+                </div>
+            
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                    <div class="card-body">
+                        All BitKye transactions are non-refundable. Under no circumstances will refunds be issued, so ensure that all transaction amounts are correct. If your bid is lower than the buy-in amount of the Kye, your payment will be added to the Kye and disctributed to the Kye participants. 
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+    
+</style>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endblock %} 

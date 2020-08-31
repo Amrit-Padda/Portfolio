@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <!-- Page Content -->
+    <section class="py-5 p-3 mb-2  text-dark">
+        <div class="container">
+            <div class="alert alert-warning alert-dismissible text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                All transactions on BitKye are <strong>non refundable</strong> and subject to a {{fee}}% transaction fee.                
+            </div>
+            <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                Bitkye is currently in Beta testing. <strong>Kye's are not in operation and funds will not be distributed.</strong>   
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="font-weight-light">Welcome to BitKye</h2>
+            <p>Here you will find information regarding the current Kye </p>
+        </div>
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-6 bg-light">
+                    <table class = "table" id = "Kyetable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Addresses</th>
+                                <th scope="col">Bid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for bid in queue %}
+                                <tr valign="top">
+                                    <td> {{ bid.addresses }} {{curr}}</td>
+                                    <td> {{ bid.bid|int / 100000000.0}} {{curr}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-6 bg-light">
+                    <h5 class="font-weight-light">Kye Information</h5>
+                    <div class = "row">
+                        <div class="col">
+                            <p class="d-inline">Buy in: {{buyin}} {{curr}} </p><p class="d-inline text-muted">| {{buyin2}} {{curr2}} </p>
+                        </div>
+                    </div>
+                    <p>BitKye address: {{address}} </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 bg-light">
+                    <table class = "table" id = "Pooltable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Pool winner</th>
+                                <th scope="col">Winning bid</th>
+                                <th scope="col">Pool value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for entry in pool %}
+                                <tr valign="top">
+                                    <td> {{ entry.winner }}</td>
+                                    <td> {{ entry.topbid|int / 100000000.0}} {{curr}}</td>
+                                    <td> {{ entry.poolval|int / 100000000.0 }} {{curr}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" crossorigin="anonymous">
+            function convert(sat){
+                return sat / 100000000.0
+            }
+            $(document).ready(function() {
+                //var socket = io.connect('http://www.bitkye.com:5000/');
+                //var socket = io.connect('http://localhost:5000/');
+                var socket = io.connect();
+
+
+                socket.on('after connect', function(msg) {
+                    //console.log('After connect', msg);
+                });
+
+                socket.on('new bidder', function(newbid) {
+                    //console.log('New Bidder', newbid);
+                    var input = JSON.parse(newbid)
+                    var tableRef = document.getElementById('Kyetable').getElementsByTagName('tbody')[0];
+                    var newRow   = tableRef.insertRow(0);
+                    var addresses  = newRow.insertCell(0);
+                    var bids  = newRow.insertCell(1);
+                    var addressText  = document.createTextNode(input.addresses);
+                    var bidText  = document.createTextNode(input.bid);
+                    addresses.appendChild(addressText);
+                    bids.appendChild(bidText);
+                 
+                    //append to table
+                });
+                socket.on('full pool', function(newbid) {
+                    console.log('pool full', newbid);
+                    var table = document.getElementById('Kyetable').getElementsByTagName('tbody')[0];
+                    table.textContent = ' ' ;
+                    location.reload(); 
+                });
+                
+                socket.on('new hk', function(newbid) {
+                    console.log('new', newbid);
+                });
+                $(window).on('beforeunload', function(){
+                    var table = document.getElementById('Kyetable').getElementsByTagName('tbody')[0];
+                    table.textContent = ' ' ;
+                    socket.close();
+                    location.reload(); 
+                });
+            });
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </section>
+{% endblock %} 

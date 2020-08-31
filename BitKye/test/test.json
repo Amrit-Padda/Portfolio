@@ -1,0 +1,41 @@
+{
+	"block_hash": "0000000000000000c504bdea36e531d80...",
+	"block_height": 293000,
+	"hash": "f854aebae95150b379cc1187d848d58225f3c41...",
+	"addresses": [
+		"1N2f642sbgCMbNtXFajz9XDACDFnFzdXzV"
+	],
+	"total": 70320221545,
+	"fees": 0,
+	"size": 636,
+	"preference": "low",
+	"relayed_by": "",
+	"confirmed": "2014-03-29T01:29:19Z",
+	"received": "2014-03-29T01:29:19Z",
+	"ver": 1,
+	"lock_time": 0,
+	"double_spend": false,
+	"vin_sz": 4,
+	"vout_sz": 1,
+	"confirmations": 63171,
+	"inputs": [{
+		"prev_hash": "583910b7bf90ab802e22e5c25a89...",
+		"output_index": 1,
+		"script": "4830450220504b1ccfddf508422bdd8...",
+		"output_value": 16450000,
+		"sequence": 4294967295,
+		"addresses": [
+			"tb1q0d72sjqutecj8wyuj5lg3ge3w5fwrvc2rkrvjw"
+		],
+		"script_type": "pay-to-pubkey-hash"
+	}],
+	"outputs": [{
+		"value": 1100000,
+		"script": "76a914e6aad9d712c419ea8febf009a...",
+		"spent_by": "35832d6c70b98b54e9a53ab2d5117...",
+		"addresses": [
+			"1N2f642sbgCMbNtXFajz9XDACDFnFzdXzV"
+		],
+		"script_type": "pay-to-pubkey-hash"
+	}]
+}
