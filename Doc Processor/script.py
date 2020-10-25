@@ -99,19 +99,3 @@ for file in os.listdir(dir):
         print("----------------------------------")
         shutil.move(path, move + '\\other\\' + file)
 
-
-    '''
-    im = cv2.imread(os.path.join(dir, file))
-    data = pytesseract.image_to_data(im, output_type=Output.DICT)
-    keys = list(data.keys())
-
-    n_boxes = len(data['text'])
-    for i in range(n_boxes):
-        if int(data['conf'][i]) > 60:
-            (x, y, w, h) = (data['left'][i], data['top'][i], data['width'][i], data['height'][i])
-            im = cv2.rectangle(im, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
-    cv2.imshow('img', im)
-    cv2.waitKey(0)
-    '''
-
