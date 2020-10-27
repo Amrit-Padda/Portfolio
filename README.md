@@ -7,6 +7,12 @@ One of the major initiatives I've led is to onboard an electronic EMR (Electroni
 In order to speed up the process for the staff, I built a python script which uses Google's OCR API to read the scanned document, and sort it into the appropriate directory. 
 The biggest challenge here was finding unique text on each document to sort by.
 
+## BitKye 
+BitKye is a web application I developed which incorporates some blockchain technology, but mostly web development. The fundamental concept is that of a rotating savings and credit association, a fairly simple peer to peer lending schema.
+The application allows users to contribute to a pool and then recieve a payout when the pool satisfies a criteria.
+When users send a transaction to the BitKye address, an external API triggers a callback url which adds the transaction to a
+MySQL database hosted with the AWS RDS service. Eventually, once the pool is full the amount is sent back to the users according to predefined rules. 
+
 ## SAE Data Acquisition System
 This ongoing project is to develop a data acquisition system for our offroad buggy. It is written in the Arduino language. 
 A few interesting constraints and concerns with the project are as follows: 
@@ -28,12 +34,6 @@ Both very interesting projects, however the A Star implementation was by far my 
 ## Computer Networking 
 The Computer Networking directory contains a project completed for a class on Computer Networking. Here, me and my teammate built a client and server from scratch in Java with both TCP and UDP functionality. This was an extremely eye opening project as these two protocols are how the current internet functions. 
 Building it from scratch really gave me an appreciation for how complex the internet really is. I will add that completing this project with Java was not a very fun experience...
-
-## BitKye 
-BitKye is a web application I developed which incorporates some blockchain technology, but mostly web development. The fundamental concept is that of a rotating savings and credit association, a fairly simple peer to peer lending schema.
-The application allows users to contribute to a pool and then recieve a payout when the pool satisfies a criteria.
-When users send a transaction to the BitKye address, an external API triggers a callback url which adds the transaction to a
-MySQL database hosted with the AWS RDS service. Eventually, once the pool is full the amount is sent back to the users according to predefined rules. 
 
 
 ## Risk 
