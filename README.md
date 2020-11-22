@@ -21,6 +21,9 @@ The Computer Vision directory contains an image stitcher completed for a class o
 the use of built in methods. Most of the required components had to be implemented from first principles, making it more challenging than most final projects,
 but I was able to complete the project with a few small bugs. 
 
+## Hypercube
+This c file is an implementation of a hypercube quicksort using the MPI library in C.
+
 ## Artificial Intelligence 
 The Artificial Intelligence directory contains a few projects completed for a class on artificial intelligence. The two contained projects are an A Star graph transversal of downtown montreal and a program which classifies the title of a forum post based on a pre built model.
 Both very interesting projects, however the A Star implementation was by far my favorite as you could see the algo get better and better at pathfinding as the parameters were tweaked and bugs were fixed. 
